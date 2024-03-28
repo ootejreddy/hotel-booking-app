@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
 import Register from "./pages/Register.tsx";
 import SignIn from "./pages/SignIn.tsx";
+import AddHotel from "./pages/AddHotel.tsx";
+import PrivateRoutes from "./components/PrivateRoutes.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <SignIn />
+      </Layout>
+    ),
+  },
+  {
+    path: "/add-hotel",
+    element: (
+      <Layout>
+        <PrivateRoutes>
+          <AddHotel />
+        </PrivateRoutes>
       </Layout>
     ),
   },
